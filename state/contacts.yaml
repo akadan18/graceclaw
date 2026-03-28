@@ -1,0 +1,42 @@
+# Contacts Tracking
+# Network relationship database. Updated by network-creator after every outreach or interaction.
+# Used by: network-creator (relationship health), main agent (meeting prep context)
+
+metadata:
+  last_updated: "[DATE]"
+  next_contact_id: 1
+
+contacts: []
+
+# Contact schema:
+#
+# - id: "contact-NNN"
+#   name: "[Full name]"
+#   email: "[email]"
+#   company: "[Company]"
+#   role: "[Title]"
+#   relationship: "close | warm | professional | cold | new"
+#   last_contact: "YYYY-MM-DD"
+#   last_contact_type: "email | DM | call | in-person | social-post"
+#   last_contact_note: "Brief note on what was discussed/shared"
+#   next_action: "What to do next and when"
+#   next_action_date: "YYYY-MM-DD"
+#   priority: "high | medium | low"     # how important is this relationship?
+#   brain_file: "data/brain/people/[name].md"   # link to full context
+#   tags: [investor, founder, advisor, client, friend]
+#
+# Example:
+# - id: "contact-001"
+#   name: "Jane Smith"
+#   email: "jane@example.com"
+#   company: "Acme Ventures"
+#   role: "Managing Partner"
+#   relationship: "warm"
+#   last_contact: "2026-03-10"
+#   last_contact_type: "email"
+#   last_contact_note: "Discussed potential collaboration"
+#   next_action: "Follow up on intro request"
+#   next_action_date: "2026-03-21"
+#   priority: "high"
+#   brain_file: "data/brain/people/Jane-Smith.md"
+#   tags: [vc, investor]

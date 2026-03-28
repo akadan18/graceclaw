@@ -1,0 +1,32 @@
+# Agent Evaluation Tracking
+# Append-only log of graded agent outputs.
+# Used by: Daily Reflection (pattern analysis), Weekly Review (quality alerts)
+#
+# Schema:
+#   - id: eval-NNN
+#     timestamp: "YYYY-MM-DDTHH:MM:SS"
+#     task_id: "task-NNN"         # optional — links to tasks.yaml
+#     agent: "work-creator"       # which creator agent produced it
+#     validator: "work-critic" # which critic graded it
+#     category: "work|finance|content|research|network|growth"
+#     grade: "A+|A|A-|B+|B|B-|C|F"
+#     score: 0-100
+#     iterations: 1               # how many creator-critic rounds
+#     rationale: "One-line grade explanation"
+#     top_issue: "Most important fix, or None"
+#     outcome: "shipped|iterated|escalated"
+
+metadata:
+  created_at: "[DATE]"
+  next_eval_id: 1
+
+evals: []
+
+# Aggregation (update during weekly reflection):
+stats:
+  total_evals: 0
+  avg_score: 0
+  shipped_rate: 0       # % that shipped on first round
+  escalation_rate: 0    # % that escalated to user
+  by_category: {}
+  common_top_issues: []

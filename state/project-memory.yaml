@@ -1,0 +1,42 @@
+# Project Memory
+# Persistent learnings that apply across sessions and workflows.
+#
+# QUALITY STANDARD — each learning must pass ALL FOUR tests:
+#   1. Transferable — applies beyond this specific situation
+#   2. Insightful — not obvious from docs or common sense
+#   3. Behavioral — about what works/fails, not how things are configured
+#   4. Durable — won't go stale in a month
+#
+# If it fails any test, route elsewhere:
+#   - Action item → tasks.yaml
+#   - Factual data → data/brain/
+#   - Temporary context → memory/notes.md
+#
+# Types: quality_pattern | process_pattern | architecture_pattern |
+#        financial_pattern | tooling_pattern | life_ops_pattern
+#
+# On duplicate: increment times_reinforced, update last_verified, don't create new entry
+
+metadata:
+  created_at: "[DATE]"
+  last_updated: "[DATE]"
+  total_learnings: 0
+  schema_note: "last_verified + source_ref required on all new entries"
+
+learnings: []
+
+# Learning schema:
+#
+# - id: "learn-001"
+#   type: "process_pattern"
+#   insight: "Concise, actionable pattern statement — not an observation"
+#   source:
+#     workflow: "which workflow produced this"
+#     observation: "specific trigger — what happened"
+#     date: "YYYY-MM-DD"
+#   source_ref: "task-NNN | memory/YYYY-MM-DD.md"   # traceable link to original
+#   first_observed: "YYYY-MM-DD"
+#   last_verified: "YYYY-MM-DD"
+#   times_reinforced: 0
+#   confidence: "verified"   # verified | likely | hypothesis
+#   applicable_to: ["domain1", "domain2"]

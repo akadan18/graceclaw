@@ -1,0 +1,28 @@
+# Activity Feed
+# Observability layer — append after completing meaningful work.
+# Answers: "What did agents actually do today?"
+#
+# Schema:
+#   - id: "act-NNN"
+#     timestamp: "YYYY-MM-DDTHH:MM:SS"
+#     agent: "main | work-creator | research-creator | ..."
+#     task_id: "task-NNN"     # optional
+#     goal: "goal-N"          # optional — connects action to strategy
+#     action: "Short description of what was done"
+#     output: "What was produced (file, message, decision, etc.)"
+#     status: "completed | partial | failed | escalated"
+
+metadata:
+  next_act_id: 1
+
+feed: []
+
+# Example entry:
+# - id: "act-001"
+#   timestamp: "2026-03-14T10:30:00"
+#   agent: "research-creator"
+#   task_id: "task-042"
+#   goal: "goal-2"
+#   action: "Competitive landscape analysis for SaaS market"
+#   output: "data/brain/topics/SaaS-Competitive-Landscape.md"
+#   status: "completed"
