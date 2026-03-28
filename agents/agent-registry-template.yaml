@@ -1,0 +1,140 @@
+# Agent Registry
+# Maps your agent pipeline: who does what, what critic they report to, what data they read.
+#
+# ARCHITECTURE:
+#   Creator → Validator → (Operator or User)
+#
+# PROTOCOLS:
+#   agents/reflection-protocol.md       — end-of-session learnings
+#   agents/creator-critic-pattern.md — grading + ship threshold
+#   agents/edge-strategies.md           — context flow between agents
+
+agents:
+
+  # ═══════════════════════════════════════
+  # CREATORS — produce the work
+  # ═══════════════════════════════════════
+
+  # Template: copy and adapt for each domain
+
+  work-creator:
+    file: "agents/work-creator.md"         # Your SOUL.md for this agent
+    role: "creator"
+    domain: "work"
+    model: "anthropic/claude-sonnet-4-6"   # Use opus for complex analysis
+    critic: "work-critic"
+    capabilities:
+      - "meeting-prep"
+      - "opportunity-evaluation"
+      - "strategy"
+      - "deal-analysis"
+    data_sources:
+      - "data/brain/projects/"
+      - "data/brain/people/"
+      - "state/project-memory.yaml"
+
+  research-creator:
+    file: "agents/research-creator.md"
+    role: "creator"
+    domain: "research"
+    model: "anthropic/claude-sonnet-4-6"
+    critic: "research-critic"
+    capabilities:
+      - "market-analysis"
+      - "competitive-intelligence"
+      - "due-diligence"
+      - "industry-deep-dive"
+    data_sources:
+      - "data/brain/topics/"
+      - "data/brain/projects/"
+      - "state/project-memory.yaml"
+    protocols:
+      - "agents/deep-research-protocol.md"
+
+  finance-creator:
+    file: "agents/finance-creator.md"
+    role: "creator"
+    domain: "finance"
+    model: "anthropic/claude-opus-4-6"     # Use opus — financial accuracy matters
+    critic: "finance-critic"
+    capabilities:
+      - "budget-tracking"
+      - "investment-analysis"
+      - "cash-flow"
+      - "portfolio-review"
+    data_sources:
+      - "memory/finances.md"              # Create this for financial context
+      - "state/project-memory.yaml"
+
+  content-creator:
+    file: "agents/content-creator.md"
+    role: "creator"
+    domain: "content"
+    model: "anthropic/claude-sonnet-4-6"
+    critic: "content-critic"
+    capabilities:
+      - "writing"
+      - "editing"
+      - "social-posts"
+      - "newsletter"
+    data_sources:
+      - "data/brain/topics/"
+      - "state/project-memory.yaml"
+
+  infra-creator:
+    file: "agents/infra-creator.md"
+    role: "creator"
+    domain: "infra"
+    model: "anthropic/claude-sonnet-4-6"
+    critic: null                         # Self-validates — infra changes low risk
+    capabilities:
+      - "skill-management"
+      - "version-monitoring"
+      - "security-audit"
+      - "cron-management"
+    data_sources:
+      - "state/system-overview.yaml"
+
+  # ═══════════════════════════════════════
+  # VALIDATORS — stress-test the work
+  # ═══════════════════════════════════════
+
+  work-critic:
+    file: "agents/work-critic.md"
+    role: "critic"
+    domain: "work"
+    model: "anthropic/claude-sonnet-4-6"
+    ship_threshold: 90                    # A- minimum
+    validates: ["work-creator"]
+
+  research-critic:
+    file: "agents/research-critic.md"
+    role: "critic"
+    domain: "research"
+    model: "anthropic/claude-sonnet-4-6"
+    ship_threshold: 90
+    validates: ["research-creator"]
+
+  finance-critic:
+    file: "agents/finance-critic.md"
+    role: "critic"
+    domain: "finance"
+    model: "anthropic/claude-opus-4-6"   # Opus for financial validation
+    ship_threshold: 90
+    validates: ["finance-creator"]
+
+  content-critic:
+    file: "agents/content-critic.md"
+    role: "critic"
+    domain: "content"
+    model: "anthropic/claude-sonnet-4-6"
+    ship_threshold: 90
+    validates: ["content-creator"]
+
+# ═══════════════════════════════════════
+# ROUTING NOTES
+# ═══════════════════════════════════════
+# The main agent routes requests to creators, waits for critic
+# grade, then either delivers (≥A-) or iterates (3 rounds max) or escalates.
+#
+# For context flow between stages, see: agents/edge-strategies.md

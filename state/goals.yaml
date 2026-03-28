@@ -1,0 +1,52 @@
+# Strategic Goals
+# Every task above low priority must trace to a goal here.
+# Every goal traces to a mission.
+# Tasks without goals are orphans — they don't connect to strategy.
+
+metadata:
+  last_updated: "[DATE]"
+
+missions:
+  - id: "mission-1"
+    name: "[Your primary mission]"
+    description: "[What you're trying to achieve in the next 6-12 months]"
+    status: "active"
+    deadline: "[YYYY-MM-DD]"
+
+  - id: "mission-2"
+    name: "[Your second mission]"
+    description: "[Second major objective]"
+    status: "active"
+    deadline: "[YYYY-MM-DD]"
+
+goals:
+  - id: "goal-1"
+    mission: "mission-1"
+    title: "[Specific, measurable goal]"
+    success_metric: "[How you know it's achieved — number, date, outcome]"
+    status: "active"
+    deadline: "[YYYY-MM-DD]"
+    owner: "[user | agent]"
+    notes: ""
+
+  - id: "goal-2"
+    mission: "mission-2"
+    title: "[Another goal]"
+    success_metric: "[Measurable outcome]"
+    status: "active"
+    deadline: "[YYYY-MM-DD]"
+    owner: "[user | agent]"
+    notes: ""
+
+# Goal Schema:
+#   id: "goal-N"
+#   mission: "mission-N"   ← must reference a mission above
+#   title: "Specific, measurable goal title"
+#   success_metric: "How you know it's done"
+#   status: active | achieved | paused | cancelled
+#   deadline: "YYYY-MM-DD"
+#   owner: "[user] | agent"
+#   notes: "Any context"
+#
+# Task linkage: tasks.yaml entries with priority > low must include:
+#   goal: "goal-N"

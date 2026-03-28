@@ -1,0 +1,40 @@
+# System Overview
+# Current state of the agent setup. Update when anything changes.
+
+last_updated: "[DATE]"
+
+host:
+  machine: "[Mac / Linux / VPS]"
+  os: "[macOS version / Ubuntu version]"
+  openclaw_version: "[run: openclaw --version]"
+
+agent:
+  name: "[Agent name from SOUL.md]"
+  model: "[e.g. anthropic/claude-sonnet-4-6]"
+  channel: "[discord | telegram | signal | imessage]"
+
+integrations:
+  google_workspace:
+    tool: "gog"
+    account: "[email]"
+    status: "[authenticated | not-set-up]"
+    scopes: [gmail, calendar, drive, sheets, docs]
+  github:
+    tool: "gh"
+    account: "[github username]"
+    status: "[authenticated | not-set-up]"
+
+skills_installed:
+  # Run: clawhub list
+  - name: "gog"
+    version: "[version]"
+  - name: "github"
+    version: "[version]"
+
+crons_active:
+  # List active crons here after setting them up
+  []
+
+repos:
+  # Git repos the agent has access to
+  []

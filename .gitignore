@@ -1,0 +1,38 @@
+# Personal data — never push these to a shared/public repo
+MEMORY.md
+memory/*.md
+!memory/YYYY-MM-DD-template.md
+!memory/notes.md
+!memory/decisions.md
+
+# State files with personal context
+state/hot-context.md
+state/activity-feed.yaml
+state/contacts.yaml
+state/project-memory.yaml
+state/evals.yaml
+state/top-patterns.md
+
+# Brain vault (contains personal knowledge)
+data/brain/people/
+data/brain/projects/
+data/brain/topics/
+data/brain/content/voice-dna.md
+
+# Keep templates and READMEs
+!data/brain/README.md
+!data/brain/content/voice-dna-template.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Node (if any local tools)
+node_modules/

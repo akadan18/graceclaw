@@ -1,0 +1,30 @@
+# Task Database
+# Single source of truth for all tasks
+# Completed tasks → move to tasks-archive.yaml
+
+metadata:
+  next_task_id: 1
+  # ⚠️ Always read next_task_id before creating a task. Use it, then increment.
+
+tasks: []
+
+# Task schema:
+#
+# - id: "task-NNN"
+#   title: "Clear, actionable title"
+#   status: "open | in-progress | waiting | done"
+#   priority: "high | medium | low"
+#   owner: "[user] | agent"
+#   created: "YYYY-MM-DD"
+#   due_date: "YYYY-MM-DD"       # optional
+#   assigned_to: "agent-name"    # optional
+#   category: "work | personal | admin | infra | network | finance"
+#   engagement: "client-name"    # optional — for client/project-specific tasks
+#   goal: "goal-N"               # required if priority > low (see state/goals.yaml)
+#   mode: "agent | manual"       # agent = AI can work autonomously; manual = needs human
+#   requires_approval: false     # true = PIN required before acting
+#   checked_out_by: ""           # agent currently working this (prevents double-work)
+#   checked_out_at: ""           # ISO timestamp of checkout — clear on completion
+#   next_action: "Who does what next — be specific"
+#   context: "Why this matters, any relevant background"
+#   resolution: ""               # fill in when closing: what happened, when, outcome
