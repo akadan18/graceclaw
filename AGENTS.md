@@ -36,7 +36,29 @@ Task schema:
   due_date: "YYYY-MM-DD"  # optional
   next_action: "Who does what next"
   context: "Why this matters, any relevant background"
+  complexity:            # optional — see docs/autonomy-levels.md
+    scope: 1-5
+    judgment: 1-5
+    stakes: 1-5
+    novelty: 1-5
+    total: 4-20
+    level: 1-5
+  mode: "auto | summary | approval | guided | manual"
 ```
+
+### Autonomy Levels
+
+Every task can be scored on complexity (4-20) which maps to an autonomy level:
+
+| Level | Score | Human Involvement | Handling |
+|-------|-------|-------------------|----------|
+| L1 | 4-6 | None — cron handles it | Silent, log only |
+| L2 | 7-9 | Read the summary | Deliver to channel |
+| L3 | 10-13 | Approve before action | Draft, hold for PIN |
+| L4 | 14-17 | Human directs | Surface options, human decides |
+| L5 | 18-20 | Human only | Context prep only |
+
+Full scoring rubric: `docs/autonomy-levels.md`
 
 ## Memory System
 
