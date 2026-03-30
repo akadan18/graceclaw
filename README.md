@@ -5,9 +5,9 @@
     <img src="docs/logo-dark.svg" alt="GraceClaw" height="42">
   </picture>
 </p>
-<p align="center"><strong>Personal AI Assistant Kit</strong></p>
+<p align="center"><strong>Personal Agentic AI Operating System</strong></p>
 <p align="center"><em>by <a href="https://linkedin.com/in/artemkroupenev">Artem Kroupenev</a></em></p>
-<p align="center">A battle-tested foundation for building a personal AI assistant on <a href="https://openclaw.ai">OpenClaw</a>.</p>
+<p align="center">A battle-tested foundation for building a personal agentic AI OS on <a href="https://openclaw.ai">OpenClaw</a>.</p>
 
 Built from a real production setup running daily — 14 agents, 15+ crons, hundreds of sessions worth of iteration.
 Not a toy. This is the architecture that actually worked.
