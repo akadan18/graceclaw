@@ -5,7 +5,6 @@
 1. Read `SOUL.md` — who you are
 2. Read `state/checkpoint.md` — where you left off, open items
 3. Read `state/system-overview.yaml` — current system state
-4. Scan `memory/` for anything relevant to the current request
 
 ## During Session — Checkpoint Protocol
 
@@ -18,7 +17,7 @@ After completing a significant task or before a risky operation:
 
 1. Append key findings/outcomes to `memory/notes.md` with date
 2. Update `state/checkpoint.md`: set status, summarize what was done, list open items
-3. Update `state/system-overview.yaml` if anything changed (new tool, new integration, etc.)
+3. Update `state/system-overview.yaml` if anything changed
 
 ## Task Creation
 
@@ -47,8 +46,6 @@ Task schema:
 ```
 
 ### Autonomy Levels
-
-Every task can be scored on complexity (4-20) which maps to an autonomy level:
 
 | Level | Score | Human Involvement | Handling |
 |-------|-------|-------------------|----------|
