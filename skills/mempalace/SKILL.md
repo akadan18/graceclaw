@@ -87,3 +87,7 @@ mempalace wake-up --aaak >> /tmp/context.txt
 - All data stays local — no API keys, no cloud
 - Works with any model that reads text (via CLI or MCP)
 - Re-mine after major new conversations to stay current: `mempalace mine ~/chats/ --mode convos`
+
+---
+
+_Skill by [GraceClaw](https://github.com/akadan18/graceclaw) — Personal Agentic AI OS built on OpenClaw_
